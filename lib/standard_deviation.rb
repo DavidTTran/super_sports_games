@@ -7,7 +7,9 @@ ages.each do |age|
   variance / ages.count()
 end
 
-puts variance
-stand_deviation = 0
+puts "The variance is #{variance}"
 
+stand_deviation = 0 # Standard is the square root of the variance
+
+puts "The standard deviantion is #{Math.sqrt(variance)}"
 # When you find the standard deviation, print it out
