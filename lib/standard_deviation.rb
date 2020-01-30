@@ -1,15 +1,28 @@
 ages = [24, 30, 18, 20, 41]
 
-variance = 0 # variance equals each value squares, summed, then divided by the number of values
+total_age = 0
+average_age = 0
+variance_age_array = []
+variance_age_difference = []
+variance_age_sum = 0
 
 ages.each do |age|
-  variance += (age ** 2)
-  variance / ages.count()
+  total_age += age
+  average_age = (total_age / @ages.count.to_f)
 end
 
-puts "The variance is #{variance}"
+ages.each do |age|
+  variance_age_array << age - average_age
+end
 
-stand_deviation = 0 # Standard is the square root of the variance
+variance_age_array.each do |age|
+  variance_age_difference << age ** 2
+end
 
-puts "The standard deviantion is #{Math.sqrt(variance)}"
-# When you find the standard deviation, print it out
+variance_age_difference.each do |age|
+  variance_age_sum += age
+end
+
+variance_age = Math.sqrt(variance_age_sum / ages.count)
+
+return variance_age.round(2)
